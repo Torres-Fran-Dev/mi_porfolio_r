@@ -5,8 +5,8 @@
 ---
 
 ## 🌐 Enlaces Oficiales
-- **🌐 Portfolio en Vivo (Vercel):** [https://tu-portfolio.vercel.app](https://tu-portfolio.vercel.app) *(reemplaza con tu enlace real)*
-- **💼 LinkedIn:** [https://linkedin.com/in/tu-usuario](https://linkedin.com/in/tu-usuario)
+- **🌐 Portfolio en Vivo (Vercel):** https://miporfolior.vercel.app/ 
+- **💼 LinkedIn:** (https://www.linkedin.com/in/francisco-torres-698a54244/)
 
 ---
 
