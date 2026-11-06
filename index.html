@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torres Fran | Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;600&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #0f0a1f; color: #e2e8f0; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        #matrix-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.12; pointer-events: none; }
+        .content-layer { position: relative; z-index: 10; }
+        .bg-grid { background-image: radial-gradient(#44337a 1px, transparent 1px); background-size: 30px 30px; }
+        .project-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .project-card:hover { transform: translateY(-8px); border-color: #0ea5e9; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); }
+        .tech-badge { font-size: 13px; padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.1); color: #a78bfa; font-family: 'Fira Code', monospace; }
+        .logo-glow { filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.5)); }
+    </style>
+</head>
+<body class="antialiased bg-grid">
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="content-layer">
+        <nav class="fixed top-0 w-full bg-[#0f0a1f]/90 backdrop-blur-md z-[100] border-b border-violet-900/30">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <span class="font-mono text-violet-400 font-bold tracking-tighter text-xl">
+                        <span class="text-sky-500">&lt;</span>TorresDev<span class="text-sky-500">/&gt;</span>
+                    </span>
+                </div>
+                
+                <div class="flex items-center gap-4 md:gap-6 text-sm font-bold uppercase tracking-widest">
+                    <a href="#inicio" class="hover:text-sky-400 transition-colors">Inicio</a>
+                    <a href="#sobre-mi" class="hover:text-sky-400 transition-colors">Perfil</a>
+                    <a href="#skills" class="hover:text-sky-400 transition-colors">Stack</a>
+                    <a href="#proyectos" class="hover:text-sky-400 transition-colors">Proyectos</a>
+                    
+                    <a href="https://github.com/Torres-Fran-Dev" target="_blank" class="flex items-center gap-2 transition-all hover:scale-110">
+                        <img src="https://cdn.simpleicons.org/github/e2e8f0" class="w-6 h-6" alt="GitHub">
+                    </a>
+
+                    <!-- BOTÓN DE CONTACTO POR CORREO PARA RECRUITERS -->
+                    <a href="mailto:fran.contacto.dev@gmail.com" class="px-5 py-2 bg-violet-600 text-white text-sm font-bold rounded-full hover:bg-violet-500 transition active:scale-95 shadow-lg shadow-violet-500/20 flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Contacto
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <header id="inicio" class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 pt-32">
+            <div class="mb-10">
+                <img src="static/img/logo.png" alt="Logo" class="w-28 h-28 object-contain logo-glow animate-pulse">
+            </div>
+
+            <div class="inline-block px-5 py-1.5 mb-6 border border-violet-500/30 bg-violet-500/10 rounded-full text-violet-400 text-sm font-mono tracking-[0.2em] uppercase">
+                Backend Developer &bull; Python & Django
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-6">
+                TORRES <span class="bg-gradient-to-r from-violet-400 via-purple-400 to-sky-400 bg-clip-text text-transparent italic">FRAN</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl font-light leading-relaxed">
+                Desarrollador Backend enfocado en la creación de <span class="text-white font-medium">APIs robustas</span>, modelado de bases de datos relacionales y despliegue de servicios escalables. 
+                Experiencia práctica en arquitecturas basadas en <span class="text-sky-400 font-mono font-bold">Python, Django y Docker</span> con entornos Linux.
+            </p>
+        </header>
+
+        <section id="sobre-mi" class="max-w-4xl mx-auto px-6 py-6">
+            <div class="bg-[#160d2b]/80 border border-violet-500/20 rounded-2xl overflow-hidden backdrop-blur-md shadow-2xl">
+                <div class="bg-[#1c1236] px-4 py-3 border-b border-violet-500/20 flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/40"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/40"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/40"></div>
+                </div>
+                <div class="p-8 font-mono text-base leading-relaxed">
+                    <p class="text-sky-400 mb-2">root@torres_fran:~$ <span class="text-white">./init_profile.sh</span></p>
+                    <p class="text-slate-300">
+                        <span class="text-violet-400 font-bold">&gt;</span> Especializado en lógica de servidores, controladores y bases de datos con <span class="text-sky-400">PostgreSQL</span>.<br>
+                        <span class="text-violet-400 font-bold">&gt;</span> Dominio de contenedores con <span class="text-sky-400">Docker</span> y control de versiones profesional con <span class="text-orange-400">Git</span>.<br>
+                        <span class="text-violet-400 font-bold">&gt;</span> Enfoque orientado a la resolución de problemas, código limpio y entregas funcionales.<br>
+                        <span class="text-violet-400 font-bold">&gt;</span> Experiencia en desarrollo y despliegue autónomo de proyectos web en producción.
+                    </p>
+                    <p class="mt-4 text-violet-500 animate-pulse">_ system ready</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="max-w-6xl mx-auto py-20 px-6">
+            <h2 class="text-center mb-16 text-sm font-mono text-violet-500 tracking-[0.5em] uppercase font-bold">Stack Tecnológico</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Git -->
+                <div class="group flex flex-col items-center gap-4">
+                    <div class="relative w-full aspect-square flex items-center justify-center rounded-3xl border border-orange-500/10 bg-orange-500/5 group-hover:bg-orange-500/10 group-hover:border-orange-400/50 group-hover:shadow-[0_0_40px_rgba(249,115,22,0.2)] group-hover:-translate-y-3 transition-all">
+                        <img src="https://cdn.simpleicons.org/git/F05032" class="w-14 h-14 grayscale group-hover:grayscale-0 transition-all" alt="Git">
+                    </div>
+                    <span class="text-xs font-mono text-orange-400 tracking-widest font-bold opacity-50 group-hover:opacity-100 uppercase">Git</span>
+                </div>
+                <!-- Django -->
+                <div class="group flex flex-col items-center gap-4">
+                    <div class="relative w-full aspect-square flex items-center justify-center rounded-3xl border border-emerald-500/10 bg-emerald-500/5 group-hover:bg-emerald-500/10 group-hover:border-emerald-400/50 group-hover:shadow-[0_0_40px_rgba(16,185,129,0.2)] group-hover:-translate-y-3 transition-all">
+                        <img src="https://cdn.simpleicons.org/django/092E20" class="w-14 h-14 grayscale group-hover:grayscale-0 transition-all" alt="Django">
+                    </div>
+                    <span class="text-xs font-mono text-slate-500 tracking-widest font-bold opacity-50 group-hover:opacity-100 uppercase">Django</span>
+                </div>
+                <!-- Docker -->
+                <div class="group flex flex-col items-center gap-4">
+                    <div class="relative w-full aspect-square flex items-center justify-center rounded-3xl border border-sky-500/10 bg-sky-500/5 group-hover:bg-sky-500/20 group-hover:border-sky-400 group-hover:shadow-[0_0_40px_rgba(14,165,233,0.3)] group-hover:-translate-y-3 transition-all">
+                        <img src="https://cdn.simpleicons.org/docker/2496ed" class="w-14 h-14 grayscale group-hover:grayscale-0 transition-all" alt="Docker">
+                    </div>
+                    <span class="text-xs font-mono text-sky-400 tracking-widest font-bold opacity-50 group-hover:opacity-100 uppercase">Docker</span>
+                </div>
+                <!-- Python -->
+                <div class="group flex flex-col items-center gap-4">
+                    <div class="relative w-full aspect-square flex items-center justify-center rounded-3xl border border-yellow-500/10 bg-yellow-500/5 group-hover:bg-yellow-500/20 group-hover:border-yellow-400 group-hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] group-hover:-translate-y-3 transition-all">
+                        <img src="https://cdn.simpleicons.org/python/3776AB" class="w-14 h-14 grayscale group-hover:grayscale-0 transition-all" alt="Python">
+                    </div>
+                    <span class="text-xs font-mono text-yellow-400 tracking-widest font-bold opacity-50 group-hover:opacity-100 uppercase">Python</span>
+                </div>
+                <!-- Linux -->
+                <div class="group flex flex-col items-center gap-4">
+                    <div class="relative w-full aspect-square flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 group-hover:bg-white/10 group-hover:border-white group-hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] group-hover:-translate-y-3 transition-all">
+                        <img src="https://cdn.simpleicons.org/linux/FCC624" class="w-14 h-14 grayscale group-hover:grayscale-0 transition-all" alt="Linux">
+                    </div>
+                    <span class="text-xs font-mono text-slate-400 tracking-widest font-bold opacity-50 group-hover:opacity-100 uppercase">Linux</span>
+                </div>
+                <!-- PostgreSQL -->
+                <div class="group flex flex-col items-center gap-4">
+                    <div class="relative w-full aspect-square flex items-center justify-center rounded-3xl border border-sky-500/10 bg-sky-500/5 group-hover:bg-sky-500/20 group-hover:border-sky-400 group-hover:shadow-[0_0_40px_rgba(51,102,153,0.3)] group-hover:-translate-y-3 transition-all">
+                        <img src="https://cdn.simpleicons.org/postgresql/4169E1" class="w-14 h-14 grayscale group-hover:grayscale-0 transition-all" alt="PostgreSQL">
+                    </div>
+                    <span class="text-xs font-mono text-sky-400 tracking-widest font-bold opacity-50 group-hover:opacity-100 uppercase">PostgreSQL</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="max-w-6xl mx-auto py-16 px-6">
+            <h2 class="text-center mb-16 text-sm font-mono text-violet-500 tracking-[0.5em] uppercase font-bold">Proyectos Destacados en Producción</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Proyecto 1: Facundo Barber -->
+                <div class="project-card group bg-[#160d2b]/60 backdrop-blur-md rounded-3xl overflow-hidden border border-violet-900/40 flex flex-col">
+                    <div class="h-44 bg-violet-900/20 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-all duration-700" alt="Facundo Barber">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                            <span class="tech-badge">Vercel</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 uppercase italic">Facundo Barber</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4 italic">Sitio web moderno para barbería con diseño adaptable, desarrollado con HTML y Tailwind CSS, y desplegado en Vercel.</p>
+                        <a href="https://github.com/Torres-Fran-Dev/Facundo-Barber" target="_blank" class="text-sky-400 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">./Ver_Repo</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Librería-Salam -->
+                <div class="project-card group bg-[#160d2b]/60 backdrop-blur-md rounded-3xl overflow-hidden border border-violet-900/40 flex flex-col">
+                    <div class="h-44 bg-violet-900/20 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-all duration-700" alt="Librería-Salam">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                            <span class="tech-badge">Vercel</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 uppercase italic">Librería-Salam</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4 italic">Plataforma web de catálogo e interfaz de gestión comercial con despliegue en Vercel.</p>
+                        <a href="https://github.com/Torres-Fran-Dev/Libreria-Salam" target="_blank" class="text-sky-400 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">./Ver_Repo</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Pixel Vault -->
+                <div class="project-card group bg-[#160d2b]/60 backdrop-blur-md rounded-3xl overflow-hidden border border-violet-900/40 flex flex-col">
+                    <div class="h-44 bg-violet-900/20 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-all duration-700" alt="Pixel Vault">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 uppercase italic">Pixel Vault</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4 italic">E-commerce de videojuegos con backend robusto, contenedorización Docker y base de datos relacional.</p>
+                        <a href="https://github.com/Torres-Fran-Dev/Pixel-Vault" target="_blank" class="text-sky-400 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">./Ver_Repo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="py-12 border-t border-violet-900/20 text-center">
+            <p class="text-slate-600 text-xs font-mono uppercase tracking-[0.4em]">
+                Torres Fran // 2026 // Backend Solutions
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const letters = "0101<>{}[]X/";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        function draw() {
+            ctx.fillStyle = "rgba(15, 10, 31, 0.15)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#7c3aed"; ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 60);
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    </script>
+</body>
+</html>
